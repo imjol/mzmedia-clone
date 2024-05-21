@@ -9,21 +9,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const duration = (contentWidth + containerWidth) / speed;
 
-    marquee.style.animationDuration = `${duration}s`;
-    marquee.style.animationDirection =
-      marquee.style.getPropertyValue("--direction") || "normal";
-    marquee.style.animationPlayState =
-      marquee.style.getPropertyValue("--play") || "running";
+    // Get the direction from the data attribute
+    const direction = marquee.getAttribute("data-direction");
+
+    // Determine the keyframes based on the direction
+    const keyframes =
+      direction === "right-to-left"
+        ? "marqueeRightToLeft"
+        : "marqueeLeftToRight";
+
+    // Set animation properties
+    marquee.style.animation = `${keyframes} ${duration}s linear infinite`;
+    marquee.style.animationPlayState = "running";
   });
 
   // Add hover pause functionality
   marquees.forEach((marquee) => {
     marquee.parentElement.addEventListener("mouseover", () => {
-      marquee.classList.add("paused");
+      marquee.style.animationPlayState = "paused";
     });
 
     marquee.parentElement.addEventListener("mouseout", () => {
-      marquee.classList.remove("paused");
+      marquee.style.animationPlayState = "running";
     });
   });
 
