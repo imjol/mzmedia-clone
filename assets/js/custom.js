@@ -82,11 +82,26 @@ document.addEventListener("DOMContentLoaded", function () {
       1024: {
         slidesPerView: 2,
       },
+      1280: {
+        slidesPerView: 3,
+      },
     },
     gap: 10,
     navigation: {
       nextEl: ".next-process",
       prevEl: ".prev-process",
     },
+  });
+
+  // faq-area
+  const accordionButtons = document.querySelectorAll(
+    '[data-testid="flowbite-accordion"] button'
+  );
+
+  accordionButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const accordionContent = this.nextElementSibling;
+      accordionContent.hidden = !accordionContent.hidden; // Toggle visibility
+    });
   });
 });
