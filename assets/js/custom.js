@@ -104,4 +104,33 @@ document.addEventListener("DOMContentLoaded", function () {
       accordionContent.hidden = !accordionContent.hidden; // Toggle visibility
     });
   });
+
+  // scrollToTop
+  const scrollToTopButton = document.getElementById("scrollToTop");
+
+  scrollToTopButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  // menu
+  const menuToggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("menu");
+  const firstLine = document.getElementById("firstLine");
+  const secondLine = document.getElementById("secondLine");
+  const thirdLine = document.getElementById("thirdLine");
+
+  menuToggle.addEventListener("click", () => {
+    firstLine.classList.toggle("-translate-x-0");
+    firstLine.classList.toggle("translate-x-2");
+    secondLine.classList.toggle("hidden");
+    thirdLine.classList.toggle("-translate-x-0");
+    thirdLine.classList.toggle("-translate-x-2");
+
+    menu.classList.toggle("translate-y-0");
+    menu.classList.toggle("max-sm:-translate-y-[220rem]");
+  });
 });
