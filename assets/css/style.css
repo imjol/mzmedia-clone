@@ -2364,3 +2364,11 @@ body {
 .rfm-marquee.paused {
   animation-play-state: paused;
 }
+
+.testimonial {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.testimonial.active {
+  opacity: 1;
+}
