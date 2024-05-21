@@ -68,4 +68,25 @@ document.addEventListener("DOMContentLoaded", function () {
   nextButton.addEventListener("click", function () {
     swiper.slideNext();
   });
+
+  // processSlider
+  const processSlider = new Swiper(".processSlider", {
+    slidesPerView: 3,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 2,
+      },
+    },
+    gap: 10,
+    navigation: {
+      nextEl: ".next-process",
+      prevEl: ".prev-process",
+    },
+  });
 });
