@@ -100,6 +100,31 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  // viralSlider;
+  const viralSlider = new Swiper(".viralSlider", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 2,
+      },
+      1280: {
+        slidesPerView: 3,
+      },
+    },
+    gap: 10,
+    navigation: {
+      nextEl: ".next-viral",
+      prevEl: ".prev-viral",
+    },
+  });
+
   // faq-area
   const accordionButtons = document.querySelectorAll(
     '[data-testid="flowbite-accordion"] button'
