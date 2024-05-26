@@ -369,7 +369,7 @@
             </div>
 
             <div class="text-center mt-10">
-                <a href="#" target="blank"
+                <a href="#"
                     class="bg-[#4c4d4a43] w-fit inline-block text-[#FFF0E9] text-[22px] font-[500] px-6 py-3 rounded-[10px] hover:text-[#DBFA9B] max-sm:px-4 max-sm:py-2 max-sm:text-[1.125rem]">
                     See More
                 </a>
@@ -1067,9 +1067,16 @@
                             <p class="font-semibold text-xl">24/7 assistance via WhatsApp
                             </p>
                         </div>
-                        <div><a href="https://buy.stripe.com/dR63dM9Si8lzd3i7ss" target="blank"
-                                class="w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">Buy
-                                now </a></div>
+                        <div>
+                            <button data-customize-plan
+                                class="customize-plan w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
+                                customize plan
+                            </button>
+                            <a href="https://buy.stripe.com/dR63dM9Si8lzd3i7ss" target="blank"
+                                class="w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-5 uppercase font-extrabold">
+                                Buy now
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class=" text-white bg-[#090909] border p-6 rounded-2xl">
@@ -1173,9 +1180,16 @@
                             <p class="font-semibold text-xl">Live Updates via dedicated CRM
                             </p>
                         </div>
-                        <div><a href="https://buy.stripe.com/aEU6pY5C20T7bZe4gi" target="blank"
-                                class="w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">Buy
-                                now </a></div>
+                        <div>
+                            <button data-customize-plan
+                                class="customize-plan w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
+                                customize plan
+                            </button>
+                            <a href="https://buy.stripe.com/aEU6pY5C20T7bZe4gi" target="blank"
+                                class="w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-5 uppercase font-extrabold">
+                                Buy now
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class=" text-white bg-[#090909] border p-6 rounded-2xl">
@@ -1252,9 +1266,15 @@
                             <p class="font-semibold text-xl">Live Updates via dedicated CRM
                             </p>
                         </div>
-                        <div><a href="https://buy.stripe.com/dR6eWud4ucBP1kAeUV" target="blank"
-                                class="w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">Buy
-                                now </a></div>
+                        <div>
+                            <button data-customize-plan
+                                class="customize-plan w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
+                                customize plan
+                            </button>
+                            <a href="https://buy.stripe.com/dR6eWud4ucBP1kAeUV" target="blank"
+                                class="w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-5 uppercase font-extrabold">Buy
+                                now </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1552,11 +1572,30 @@
         </div>
     </div>
 
+    <!-- customize-plan-modal -->
+    <div id="customizeModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 hidden">
+        <div class="modal-content bg-white p-6 rounded-lg shadow-lg w-4/5 md:w-1/2 max-w-lg">
+            <!-- <span class="close cursor-pointer text-xl font-bold">&times;</span> -->
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-black">Customize Your Plan</h2>
+                <button id="closeModal" class="close cursor-pointer text-xl font-bold">&times;</button>
+            </div>
+            <form id="customizePlanForm">
+                <!-- Form fields go here -->
+                <div class="mb-4">
+                    <label for="requirement" class="block text-sm font-medium text-gray-700">Your Requirement</label>
+                    <textarea id="requirement" name="requirement" rows="4"
+                        class="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                </div>
+                <button type="submit"
+                    class=" w-fit inline-block hover:bg-black text-black hover:text-white border border-black text-[22px] font-[500] px-6 py-3 rounded-[10px]  max-sm:px-4 max-sm:py-2 max-sm:text-[1.125rem]">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <div id="loom-companion-mv3" ext-id="liecbddmkiiihnedobmlmillhodjkdmb">
         <section id="shadow-host-companion"></section>
     </div>
-
 
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>

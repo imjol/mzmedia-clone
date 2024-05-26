@@ -203,4 +203,36 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.addEventListener("scroll", handleScroll);
+
+  // customize-plan-button
+  const customizeButtons = document.querySelectorAll('.customize-plan');
+    const customizePlanModal = document.getElementById('customizeModal');
+    const modalContent = document.querySelector('.modal-content');
+    const closeBtn = document.querySelector('.close');
+
+    customizeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            customizePlanModal.classList.remove('hidden');
+            modalContent.classList.remove('slide-out');
+            modalContent.classList.add('slide-in');
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modalContent.classList.remove('slide-in');
+        modalContent.classList.add('slide-out');
+        setTimeout(() => {
+            customizePlanModal.classList.add('hidden');
+        }, 500);
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == customizePlanModal) {
+            modalContent.classList.remove('slide-in');
+            modalContent.classList.add('slide-out');
+            setTimeout(() => {
+                customizePlanModal.classList.add('hidden');
+            }, 500);
+        }
+    });
 });

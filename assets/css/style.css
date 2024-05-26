@@ -2392,3 +2392,34 @@ body {
 .testimonial.active {
   opacity: 1;
 }
+
+/* customize-plan */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.modal-content.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+.modal-content.slide-out {
+    animation: slideOut 0.5s forwards;
+}
