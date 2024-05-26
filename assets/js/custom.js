@@ -204,35 +204,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll);
 
-  // customize-plan-button
-  const customizeButtons = document.querySelectorAll('.customize-plan');
-    const customizePlanModal = document.getElementById('customizeModal');
-    const modalContent = document.querySelector('.modal-content');
-    const closeBtn = document.querySelector('.close');
+  // customize-plan
+  const customizePlanBtns = document.querySelectorAll(".customizePlanBtn");
+  const customizeModal = document.getElementById("customizeModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const modalContent = customizeModal.querySelector(".transition-transform");
 
-    customizeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            customizePlanModal.classList.remove('hidden');
-            modalContent.classList.remove('slide-out');
-            modalContent.classList.add('slide-in');
-        });
-    });
+  const openModal = () => {
+    customizeModal.classList.remove("hidden");
+    setTimeout(() => {
+      modalContent.classList.remove("modal-enter");
+      modalContent.classList.add("modal-enter-active");
+    }, 10); // Timeout to allow for CSS transition
+  };
 
-    closeBtn.addEventListener('click', () => {
-        modalContent.classList.remove('slide-in');
-        modalContent.classList.add('slide-out');
-        setTimeout(() => {
-            customizePlanModal.classList.add('hidden');
-        }, 500);
-    });
+  const closeModal = () => {
+    modalContent.classList.remove("modal-enter-active");
+    modalContent.classList.add("modal-exit-active");
+    setTimeout(() => {
+      modalContent.classList.remove("modal-exit-active");
+      modalContent.classList.add("modal-enter");
+      customizeModal.classList.add("hidden");
+    }, 300); // Match this timeout with the transition duration
+  };
 
-    window.addEventListener('click', (event) => {
-        if (event.target == customizePlanModal) {
-            modalContent.classList.remove('slide-in');
-            modalContent.classList.add('slide-out');
-            setTimeout(() => {
-                customizePlanModal.classList.add('hidden');
-            }, 500);
-        }
-    });
+  customizePlanBtns.forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+
+  closeModalBtn.addEventListener("click", closeModal);
+
+  customizeModal.addEventListener("click", (event) => {
+    if (event.target === customizeModal) {
+      closeModal();
+    }
+  });
+
+  // Close the modal on form submission (optional)
+  document.getElementById("customizeForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    closeModal();
+  });
 });

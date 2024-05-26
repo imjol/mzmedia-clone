@@ -2394,7 +2394,7 @@ body {
 }
 
 /* customize-plan */
-@keyframes slideIn {
+/* @keyframes slideIn {
   from {
     transform: translateY(-100%);
     opacity: 0;
@@ -2417,9 +2417,29 @@ body {
 }
 
 .modal-content.slide-in {
-    animation: slideIn 0.5s forwards;
+  animation: slideIn 0.5s forwards;
 }
 
 .modal-content.slide-out {
-    animation: slideOut 0.5s forwards;
+  animation: slideOut 0.5s forwards;
+} */
+
+.modal-enter {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.modal-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+.modal-exit-active {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.transition-transform {
+  transition: transform 0.9s ease-in-out, opacity 0.9s ease-in-out;
 }

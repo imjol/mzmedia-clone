@@ -1077,7 +1077,7 @@
                         </div>
                         <div>
                             <button data-customize-plan
-                                class="customize-plan w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
+                                class="customizePlanBtn w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
                                 customize plan
                             </button>
                             <a href="https://buy.stripe.com/dR63dM9Si8lzd3i7ss" target="blank"
@@ -1190,7 +1190,7 @@
                         </div>
                         <div>
                             <button data-customize-plan
-                                class="customize-plan w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
+                                class="customizePlanBtn w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
                                 customize plan
                             </button>
                             <a href="https://buy.stripe.com/aEU6pY5C20T7bZe4gi" target="blank"
@@ -1275,8 +1275,8 @@
                             </p>
                         </div>
                         <div>
-                            <button data-customize-plan
-                                class="customize-plan w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
+                            <button
+                                class="customizePlanBtn w-full text-center m-auto block bg-white text-black hover:bg-[#e0f63c]  mainfont py-3 text-xl hover:shadow-sm rounded-xl mt-10 uppercase font-extrabold">
                                 customize plan
                             </button>
                             <a href="https://buy.stripe.com/dR6eWud4ucBP1kAeUV" target="blank"
@@ -1581,15 +1581,13 @@
     </div>
 
     <!-- customize-plan-modal -->
-    <div id="customizeModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 hidden">
+    <!-- <div id="customizeModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 hidden">
         <div class="modal-content bg-white p-6 rounded-lg shadow-lg w-4/5 md:w-1/2 max-w-lg">
-            <!-- <span class="close cursor-pointer text-xl font-bold">&times;</span> -->
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-2xl font-bold text-black">Customize Your Plan</h2>
-                <button id="closeModal" class="close cursor-pointer text-xl font-bold">&times;</button>
+                <button id="closeModalBtn" class="close cursor-pointer text-xl font-bold">&times;</button>
             </div>
             <form id="customizePlanForm">
-                <!-- Form fields go here -->
                 <div class="mb-4">
                     <label for="requirement" class="block text-sm font-medium text-gray-700">Your Requirement</label>
                     <textarea id="requirement" name="requirement" rows="4"
@@ -1597,6 +1595,42 @@
                 </div>
                 <button type="submit"
                     class=" w-fit inline-block hover:bg-black text-black hover:text-white border border-black text-[22px] font-[500] px-6 py-3 rounded-[10px]  max-sm:px-4 max-sm:py-2 max-sm:text-[1.125rem]">Submit</button>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- <div id="customizeModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-90 hidden">
+        <div class="modal-content bg-white p-8 rounded-lg shadow-lg relative modal modal-enter">
+            <div class="flex justify-between items-center gap-[50px] mb-4">
+                <h2 class="text-2xl font-bold text-black">Customize Your Plan</h2>
+                <button id="closeModalBtn" class="close cursor-pointer text-xl font-bold">&times;</button>
+            </div>
+            <form id="customizeForm">
+                <div class="mb-4">
+                    <label for="requirement" class="block text-sm font-medium text-gray-700">Your Requirement</label>
+                    <textarea id="requirement" name="requirement" rows="4"
+                        class="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                </div>
+                <button type="submit"
+                    class=" w-fit inline-block hover:bg-black text-black hover:text-white border border-black text-[16px] font-[500] px-[16px] py-[6px] rounded-[10px]  max-sm:px-4 max-sm:py-2 max-sm:text-[1.125rem]">Submit</button>
+            </form>
+        </div>
+    </div> -->
+
+    <div id="customizeModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg relative transition-transform modal-enter">
+            <div class="flex justify-between items-center gap-[50px] mb-4">
+                <h2 class="text-2xl font-bold text-black">Customize Your Plan</h2>
+                <button id="closeModalBtn" class="close cursor-pointer text-xl font-bold">&times;</button>
+            </div>
+            <form id="customizeForm">
+                <div class="mb-4">
+                    <label for="requirement" class="block text-sm font-medium text-gray-700">Your Requirement</label>
+                    <textarea id="requirement" name="requirement" rows="4"
+                        class="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                </div>
+                <button type="submit"
+                    class=" w-fit inline-block hover:bg-black text-black hover:text-white border border-black text-[16px] font-[500] px-[16px] py-[6px] rounded-[10px]  max-sm:px-4 max-sm:py-2 max-sm:text-[1.125rem]">Submit</button>
             </form>
         </div>
     </div>
