@@ -165,4 +165,42 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("translate-y-0");
     menu.classList.toggle("max-sm:-translate-y-[220rem]");
   });
+
+  // booking-modal
+  const modal = document.getElementById("book-modal");
+  let isVisible = false;
+
+  const showModal = () => {
+    modal.firstElementChild.classList.remove("translate-y-96");
+    modal.firstElementChild.classList.add("-translate-y-10");
+    isVisible = true;
+  };
+
+  const hideModal = () => {
+    modal.firstElementChild.classList.remove("-translate-y-10");
+    modal.firstElementChild.classList.add("translate-y-96");
+    isVisible = false;
+  };
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+
+    if (
+      (scrollPercent >= 5 && scrollPercent <= 10) ||
+      (scrollPercent >= 60 && scrollPercent <= 70)
+    ) {
+      if (!isVisible) {
+        showModal();
+      }
+    } else {
+      if (isVisible) {
+        hideModal();
+      }
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
 });
